@@ -18,6 +18,7 @@ end
 
 gem 'jquery-rails'
 gem 'thin'
+gem 'haml'
 
 # Use unicorn as the web server
 # gem 'unicorn'
