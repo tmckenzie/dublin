@@ -19,7 +19,10 @@ end
 
 gem 'jquery-rails'
 gem 'thin'
+gem 'devise'
 gem 'haml'
+gem 'haml-rails'
+gem 'cancan'
 
 # Use unicorn as the web server
 # gem 'unicorn'
