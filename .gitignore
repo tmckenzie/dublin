@@ -3,3 +3,15 @@ db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
+.DS_Store
+.idea/
+.jhw-cache/
+.sass-cache/
+.rspec-tm
+config/database.yml
+coverage/
+log/*.log
+public/assets/
+spec/javascripts/generated/
+tmp/
+
