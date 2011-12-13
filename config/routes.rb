@@ -1,4 +1,9 @@
 Dublin::Application.routes.draw do
+
+  devise_for :users, :skip => [:registrations], :controllers => { :sessions => "sessions" }
+
+  resources :users
+
   resources :products
 
   # The priority is based upon order of creation:

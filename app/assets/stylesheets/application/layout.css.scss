@@ -1,0 +1,128 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "colors";
+@import "960/grid";
+
+$ninesixty_columns: 16;
+
+#grid_wrapper {
+  @include grid-container;
+
+  #wrapper {
+    @include grid(16);
+    position: relative;
+    #showgrid {
+      display: none;
+      position: absolute;
+      left: -10px;
+      right: -10px;
+      bottom: 0;
+      top: 0;
+      z-index: 9999;
+      background: image-url('16_col.gif') repeat-y;
+      opacity: 0.25;
+    }
+  }
+}
+
+#header {
+  margin-top: 25px;
+}
+#header h1#logo {
+  float: left;
+  background: image-url("logo_large.gif") no-repeat;
+  a {
+    display: block;
+    width: 586px;
+    height: 66px;
+    em {
+      display: none;
+    }
+  }
+}
+
+#account_info {
+  font-size: 12px;
+  @include grid(4);
+  float: right;
+  text-align: right;
+  a {
+    color: $medium_grey;
+    text-decoration: none;
+  }
+}
+#account_info .links {
+  color: $medium_grey;
+  a {
+    margin: 0 8px;
+    &:last-child { margin-right: 0; }
+  }
+}
+#account_info strong {
+  color: $dark_grey;
+  font-size: 16px;
+  font-weight: normal;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+#main_nav {
+  padding-top: 15px;
+  clear: both;
+}
+#main_nav ul li {
+  list-style: none;
+  float: left;
+  margin-right: 10px;
+}
+#main_nav ul li a {
+  color: $dark_grey;
+  display: block;
+  @include single-text-shadow($white, 1px, 1px);
+  em {
+    padding: 11px 13px;
+    display: block;
+    font-weight: bold;
+  }
+  &.selected {
+    color: $dark_red;
+    background: image-url("main_nav_selected_right.png") no-repeat right;
+    em {
+      background: image-url("main_nav_selected_left.png") no-repeat left;
+    }
+  }
+  &:hover {
+    color: $blue;
+    background: image-url("main_nav_hover_right.png") no-repeat right;
+    em {
+      background: image-url("main_nav_hover_left.png") no-repeat left;
+    }
+  }
+}
+
+#main {
+  clear: both;
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+
+#footer {
+  clear: both;
+  border-top: $light_grey 1px solid;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: $medium_grey;
+}
+#footer ul li {
+  display: inline;
+  margin: 0 25px;
+  a {
+    color: $medium_grey;
+  }
+}
+#footer p.copyright {
+  clear: both;
+  margin-top: 15px;
+}

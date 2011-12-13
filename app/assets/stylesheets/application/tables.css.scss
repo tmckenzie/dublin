@@ -1,0 +1,80 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "colors";
+@import "960/grid";
+
+table.list {
+  width: 100%;
+  @include clearfix;
+  tr th {
+    padding: 23px 33px 10px 25px;
+    font-size: 12px;
+    color: $white;
+    background: $medium_grey;
+    border-right: $white 1px solid;
+    border-bottom: $light_grey 1px solid;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+  tr td {
+    font-size: 15px;
+    color: $dark_grey;
+    padding: 20px;
+    border-bottom: $lighter_grey 1px solid;
+    a {
+      color: $blue;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    a.edit_icon {
+      visibility: hidden;
+      text-indent: -9999px;
+      background: image-url('icon_pencil.png') no-repeat center center;
+      width: 25px;
+      height: 16px;
+      float: right;
+    }
+    em {
+      color: $green;
+    }
+    &.destroy a {
+      display: block;
+      height: 20px;
+      width: 15px;
+      background: image-url('trash_sprite.png') no-repeat 0 0;
+      text-indent: -9999px;
+      margin: auto;
+    }
+  }
+  tr.odd td {
+    background-color: $white;
+  }
+  tr.even td {
+    background-color: $almost_white;
+  }
+  tr:hover td {
+    background: image-url("row_hover.png") top left repeat-x #c6e0ec;
+    a.edit_icon {
+      visibility: visible;
+    }
+    &.destroy a {
+      background-position: 0 -20px;
+    }
+  }
+  tr td.selected {
+    color: #fff;
+    a,
+    em {
+      color: #fff;
+    }
+    background: image-url("row_selected.png") top left repeat-x #0182bc;
+  }
+}
+.panel .table_wrapper {
+  @include alpha;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  border-left: 0 !important;
+  margin-bottom: 0 !important;
+}

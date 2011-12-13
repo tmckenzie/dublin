@@ -1,0 +1,74 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "960/grid";
+@import "colors";
+
+.button {
+  border: 1px solid;
+  @include border-radius(5px);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 7px 14px;
+  text-align: center;
+  &.blue {
+    @include background-image(linear-gradient(rgb(128,195,213), rgb(39, 131, 180)));
+    @include single-text-shadow($blue, -1px, -1px);
+    color: $white;
+    border-top-color: rgb(159, 209, 222);
+    border-left-color: rgb(159, 209, 222);
+    border-bottom-color: rgb(28, 97, 135);
+    border-right-color: rgb(28, 97, 135);
+    &:hover {
+      @include background-image(linear-gradient(rgb(180,229,242), rgb(58, 162, 218)));
+      border-top-color: rgb(198, 236, 245);
+      border-left-color: rgb(198, 236, 245);
+      border-bottom-color: rgb(42, 121, 163);
+      border-right-color: rgb(42, 121, 163);
+      cursor: pointer;
+    }
+    &:active {
+      @include background-image(linear-gradient(rgb(58, 162, 218), rgb(180,229,242)));
+    }
+  }
+  &.grey {
+    @include background-image(linear-gradient(#F4F4F4, #C6C8C8));
+    @include single-text-shadow($white, 1px, 1px);
+    color: $dark_grey;
+    border-top-color: #F7F7F7;
+    border-left-color: #F7F7F7;
+    border-bottom-color: #949797;
+    border-right-color: #949797;
+    &:hover {
+      @include background-image(linear-gradient(#F4F4F4, #D7D9DA));
+      border-bottom-color: #A2A3A3;
+      border-right-color: #A2A3A3;
+      color: $lighter_blue;
+      cursor: pointer;
+    }
+    &:active {
+      @include background-image(linear-gradient(#D7D9DA, #F4f4f4));
+    }
+  }
+
+}
+
+td.destroy input[type=submit] {
+  display: block;
+  height: 15px;
+  width: 15px;
+  background: image-url('trash_sprite.png') no-repeat 0 0;
+  text-indent: -9999px;
+  margin: auto;
+  box-sizing: inherit;
+  -webkit-appearance: none;
+  border: none;
+  &:hover {
+    background-position: 0 -20px;
+  }
+}
+tr:hover td input[type=submit] {
+  background-position: 0 -20px;
+}
+input[value=Delete]:hover {
+  cursor: pointer;
+}

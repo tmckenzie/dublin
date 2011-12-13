@@ -1,0 +1,113 @@
+@import 'colors';
+@import "compass/css3";
+@import "compass/utilities";
+@import "960/grid";
+
+
+.builder_breadcrumbs {
+  height: 110px;
+  background: $white;
+  @include single-box-shadow(rgb(200, 200, 200));
+  &.no_box_shadow {
+    box-shadow: none;
+  }
+  div {
+    ul {
+      display: inline-block;
+      li {
+        display: block;
+        float: left;
+      }
+    }
+
+    &.primary {
+      text-align: center;
+      padding-top: 20px;
+      ul {
+        li.arrow {
+          background-image: image-url('large_breadcrumb_arrow.png');
+          height: 12px;
+          width: 12px;
+          margin-top: 25px;
+        }
+
+        li.inactive, li.active {
+          margin: 10px 5px;
+
+          @include background-image(linear-gradient(#CFCFCF, #E6E5E5 30%, #F3F3F3));
+          border-top: 1px solid #CFCFCF;
+          border-left: 1px solid #CFCFCF;
+          border-bottom: 1px solid #ECECEC;
+          border-right: 1px solid #ECECEC;
+
+          @include single-box-shadow(rgb(200, 200, 200), 0px, 0px, 5px, false, true);
+
+          color: $dark_grey;
+          @include border-radius(5px);
+
+          font-size: 16px;
+          font-weight: bold;
+          padding: 12px 0px;
+          text-align: center;
+          width: 200px;
+        }
+
+        li.active {
+          @include background-image(linear-gradient(#AEAFAF, #808181));
+          border-top: 1px solid #C4C5C5;
+          border-left: 1px solid #C4C5C5;
+          border-bottom: 1px solid #8A8B8B;
+          border-right: 1px solid #8A8B8B;
+          @include single-box-shadow(rgb(200, 200, 200));
+          color: $white;
+          @include single-text-shadow($dark_grey, 1px, 1px);
+        }
+      }
+    }
+    &.secondary {
+      text-align: left;
+      ul {
+        li.arrow {
+          background-image: image-url('small_breadcrumb_arrow.png');
+          height: 8px;
+          width: 8px;
+          margin-top: 4px;
+        }
+        li.inactive, li.active {
+          margin: 0px 15px;
+          font-size: 14px;
+          color: $medium_light_grey;
+        }
+        li.active {
+          color: $dark_grey;
+        }
+        &.communication_configuration_breadcrumbs {
+          margin-left: 170px;
+        }
+        &.fundraising_configuration_breadcrumbs {
+          margin-left: 455px;
+        }
+      }
+    }
+  }
+}
+
+.exit_builder {
+  position: absolute;
+  right: 0px;
+  top: 20px;
+  font-size: 12px;
+  a, a:visited {
+    color: $blue;
+  }
+}
+
+#panel_campaign_builder {
+  div[data-content-key="message-form"] {
+    .submit {
+      background-color: $white;
+      background-image: none;
+      border: 0px;
+    }
+  }
+}

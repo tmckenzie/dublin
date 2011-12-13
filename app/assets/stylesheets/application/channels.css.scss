@@ -1,0 +1,29 @@
+@import "960/grid";
+
+.sms_edit {
+  @include grid(8);
+  @include alpha;
+}
+
+.tabbed_container .panel .sms_edit {
+  label.primary {
+    @include grid(2);
+   }
+
+  input[type="text"],
+  textarea {
+    @include grid(5);
+    resize: none;
+  }
+}
+
+.sms_edit .frequency_field {
+  input {
+    width: 80px !important;
+  }
+  .sb-custom,
+  select {
+    margin-top: -5px !important;
+    width: 100px !important;
+  }
+}

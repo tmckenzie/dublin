@@ -1,0 +1,310 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "colors";
+@import "960/grid";
+
+$ninesixty_columns: 16;
+
+/* tabbed panels */
+#main > .tabbed_container,
+#main > .tabbed_container_imposter {
+  @include alpha;
+}
+.tabbed_container, .tabbed_container_imposter {
+  @include grid(16);
+  position: relative;
+  h2 {
+    font-size: 24px;
+    color: $dark_grey;
+    margin-bottom: 20px;
+    em {
+      color: lighten($medium_grey, 20%);
+    }
+  }
+  .ui-tabs-nav {
+    /*overflow: hidden;*/
+    height: 40px;
+    margin-top: 10px;
+    li {
+      &:first-child {
+        margin-left: 0;
+        span, a {
+          @include border-top-left-radius(5px);
+        }
+      }
+      &:last-child a, &:last-child span {
+        @include border-top-right-radius(5px);
+      }
+      overflow: hidden;
+      vertical-align: middle;
+      /*background-color: $light_grey;*/
+      margin-left: 1px;
+      margin-top: 6px;
+      span, a {
+        display: block !important;
+        padding: 11px 62px;
+        font-size: 15px;
+        line-height: 11px;
+        color: $blue;
+        @include single-text-shadow($lighter_grey, 1px, 1px);
+        @include background-image(linear-gradient(rgb(215,215,215), rgb(193, 193, 193) 90%, rgb(182, 182, 182)));
+      }
+    }
+  }
+  .ui-tabs-nav .ui-state-active {
+    margin-top: 0px;
+    padding-left: 5px !important;
+    padding-top: 5px;
+    padding-right: 5px !important;
+    margin-left: -5px !important;
+    margin-top: -5px;
+    margin-right: -5px;
+    a, span {
+      padding: 16px 62px 12px 62px;
+      color: $dark_grey;
+      background: $white;
+      font-weight: bold;
+      @include single-box-shadow(rgb(200, 200, 200));
+    }
+  }
+}
+.tabbed_container .panel,
+.tabbed_container_imposter .panel {
+  @include single-box-shadow(rgb(200, 200, 200));
+  background-color: $white;
+  padding-top: 10px;
+
+  label {
+    text-align: right;
+    color: $dark_grey;
+    &.disabled {
+      color: $medium_light_grey;
+    }
+    &.primary, &.secondary {
+      color: #8c8c8c;
+    }
+    &.primary {
+      @include grid(4);
+      @include alpha;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    &.secondary {
+      @include grid(2);
+      &.centered {
+        text-align: center;
+      }
+    }
+    &.multiline {
+      line-height: 25px;
+    }
+    &.or {
+      @include grid(2);
+      width: 15px;
+      margin-right: 18px;
+    }
+    &.fieldWithErrors {
+      color: $error_red;
+    }
+  }
+  input[type="text"], textarea {
+    @include single-box-shadow($lighter_grey, 0, 0, 5px, 0, true);
+    @include grid(8);
+    @include border-radius(5px);
+    @include box-sizing(border-box);
+    border: 1px solid $light_grey;
+    font-size: 18px;
+    padding: 10px;
+    margin-top: -10px;
+    color: $dark_grey;
+    &:focus {
+      border-color: $dark_grey;
+      @include single-box-shadow($medium_grey, 0, 0, 5px, 0, true);
+      outline: none;
+    }
+    &.money {
+      background: image-url('dollar.png') no-repeat 8px 12px;
+      padding-left: 22px;
+    }
+    &[disabled] {
+      background-color: $lighter_grey;
+    }
+    &.fieldWithErrors {
+      border-width: 2px;
+      border-color: $error_red;
+    }
+    &.short_text {
+      @include grid(5);
+    }
+  }
+  select[multiple].fieldWithErrors {
+    border: 2px solid $error_red;
+  }
+  #error_explanation {
+    @include grid(15);
+    @include background-image(linear-gradient(#bf6843, #bf4943));
+    @include box-sizing(border-box);
+    color: $white;
+    margin-top: 5px;
+    margin-left: 30px;
+    padding: 15px;
+    h2 {
+      color: $white;
+      font-size: 18px;
+    }
+    ul {
+      list-style: none;
+      li {
+        padding-top: 3px;
+      }
+    }
+  }
+  width: 100%;
+  float: left;
+  form > div, form {
+    width: 100%;
+    float: left;
+  }
+  .field {
+    padding: 20px 0;
+    /*@include clearfix;*/
+    clear:both;
+  }
+  div {
+    input.datepicker, input.datetimepicker {
+      @include grid(3);
+      background: image-url('calendar_sprite.png') no-repeat 123px 8px;
+      cursor: pointer;
+      &:hover {
+        background-position-y: -68px;
+      }
+    }
+    input.datetimepicker {
+      @include grid(4);
+      background-position-x: 183px;
+    }
+    fieldset {
+      @include grid(8);
+      div:first-child {
+        /*padding-top: 0 !important;*/
+        margin-top:-10px;
+      }
+      div {
+        padding:10px 0px;
+        label, input {
+          float: left;
+          text-align: left;
+        }
+        label {
+          @include grid(3);
+          margin-left: 0 !important;
+          &.short {
+            @include grid(2);
+          }
+        }
+        input[type="text"] {
+          @include grid(3);
+        }
+        &.channels_input {
+          @include grid(4);
+          @include alpha;
+          textarea {
+            @include grid(4);
+            @include alpha;
+            height: 10em;
+          }
+          .meta_left, .meta_right {
+            font-size: 11px;
+            color: $medium_grey;
+            strong {
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+          }
+          .meta_left {
+            float: left;
+          }
+          .meta_right {
+            float: right;
+          }
+        }
+        &.without_input {
+          float: left;
+          padding: 10px 0px 20px;
+          label {
+            @include grid(6);
+            &.disabled {
+              color: $medium_light_grey;
+            }
+          }
+        }
+      }
+      &.horizontal {
+        div {
+          float: left;
+          margin-top: -10px;
+        }
+        label {
+          width: auto;
+          margin-right: 20px;
+        }
+      }
+    }
+
+  }
+  div.submit {
+    clear: both;
+    @include grid(16);
+    @include alpha;
+    @include omega;
+    padding: 20px 0;
+    border-top: 1px solid $medium_grey;
+    @include background-image(linear-gradient(rgb(141,141,141), rgb(162, 162, 162) 40%, rgb(172, 172, 172)));
+    text-align: center;
+    input {
+      display: inline-block;
+      padding: 7px 40px;
+    }
+    a {
+      color: $white;
+    }
+  }
+  div.message_channels {
+    @include grid-container;
+    @include alpha;
+    fieldset:first-child {
+     @include grid-prefix(1);
+     @include alpha;
+    }
+    fieldset {
+      min-height: 1px;
+      @include grid(4);
+    }
+    .link_fields_column {
+      @include grid(1);
+      height: 100px;
+    }
+  }
+}
+#tooltip, #keyword_select_warning {
+  @include background-image(linear-gradient(#f0e7ba, #e0d49c));
+  @include single-box-shadow(rgb(200,200,200));
+  position: absolute;
+  border: 1px solid #bbac64;
+  padding: 14px;
+  font-size: 14px;
+  color: $medium_grey;
+  width: 200px;
+  z-index: 1;
+}
+#keyword_select_warning {
+  display: none;
+  position: absolute;
+  width: 376px;
+  right: 5px;
+  margin-top: 27px;
+  font-size: 14px;
+}
+.jcrop-holder {
+  float: left;
+}

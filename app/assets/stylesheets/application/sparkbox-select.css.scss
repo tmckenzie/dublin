@@ -1,0 +1,109 @@
+@import 'colors';
+@import "compass/css3";
+@import "compass/utilities";
+@import "960/grid";
+
+.no-js .sparkbox-custom {
+  display: block;
+}
+
+
+html body #wrapper .sb-custom {
+  clear: none;
+  cursor: pointer;
+  @include grid(3);
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  margin-top: -10px;
+  &.thin {
+    @include grid(2);
+  }
+  &.wide {
+    @include grid(4);
+  }
+  select {display: none;}
+  .dropdown {
+    &::after {
+      content: "▼";
+      font-size:10px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    .selected-item {
+      padding: 0;
+      width: 100%;
+      white-space: nowrap;
+      overflow-x: hidden;
+    }
+    width: 100%;
+    @include box-sizing(border-box);
+    position: relative;
+    padding-right: 30px !important;
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+    outline:none; /* remove focus ring from Webkit */
+    line-height: 1.2;
+    background: #f8f8f8;
+
+    -webkit-appearance:none; /* remove the strong OSX influence from Webkit */
+
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+
+    @include background-image(linear-gradient(#F7F7F7, #C6C9C9));
+
+    border-top: 1px solid #F7F7F7;
+    border-left: 1px solid #F7F7F7;
+    border-bottom: 1px solid #949797;
+    border-right: 1px solid #949797;
+
+    color: $dark_grey;
+
+    @include single-box-shadow(rgb(200, 200, 200));
+  
+    @include single-text-shadow($white, 1px, 1px);
+  }
+  .sb-dropdown {
+    display: none;
+    width: 100%;
+    @include box-sizing(border-box);
+    background: $white;
+    @include single-box-shadow(rgb(200, 200, 200));
+    font-size: .9em;
+    list-style: none;
+    margin: 0;
+    top: 0;
+    position: absolute;
+    z-index: 10;
+
+    a {
+      color: #444;
+      display: block;
+      padding: 5px 15px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .selected a {
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: $white;
+      @include background-image(linear-gradient(#33aae4, #0182bc));
+    }
+  }
+  select[disabled] + .sb-select {
+    @include background-image(linear-gradient(#d6d6d6, #b8b8b8));
+    @include single-box-shadow(rgb(180, 180, 180));
+    border-color: #949797;
+    color: $medium_grey;
+  }
+}
+

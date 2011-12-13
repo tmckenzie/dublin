@@ -17,12 +17,26 @@ group :assets do
   gem 'uglifier'
 end
 
+group :development do
+  gem 'hpricot'
+  gem 'ruby_parser'
+end
+
 gem 'jquery-rails'
 gem 'thin'
 gem 'devise'
 gem 'haml'
 gem 'haml-rails'
 gem 'cancan'
+gem 'active_hash'
+gem 'uuid'
+gem 'money'
+gem 'faker'
+gem 'omniauth'
+gem 'comma'
+gem "compass", "~> 0.12.alpha.0"
+gem "compass-960-plugin"
+gem "will_paginate"
 
 # Use unicorn as the web server
 # gem 'unicorn'

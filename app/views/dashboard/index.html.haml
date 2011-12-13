@@ -1,1 +1,4 @@
 %h1 Hi, welcome to the MMP Product entry APP!
+%br
+- if can? :manage, User
+  = link_to "Manage Users", users_path

@@ -1,0 +1,150 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require application/custom_checkbox
+ *= require_tree .
+*/
+
+@import "compass/utilities/general/clearfix";
+/*@import "compass/css3/text-shadow";*/
+/*@import "compass/css3/box-shadow";*/
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/reset";
+@import "960/grid";
+
+/* --- GRID SETUP - so we can still throw them in the markup (use this sparingly) --- */
+@for $i from 1 through 16 {
+  .grid_#{$i} {
+    @include grid($i)
+  }
+}
+
+/* --- VARIABLES AND SETTINGS --- */
+
+$ninesixty_columns: 16;
+
+@import 'colors';
+
+/* --- BASIC ELEMENTS --- */
+body {
+  background-color: $almost_white;
+  font-family: Arial, Helvetica, San-serif;
+}
+a {
+  text-decoration: none;
+}
+strong {
+  font-weight: bold;
+}
+h3 {
+  color: $dark_grey;
+  font-size: 18px;
+  margin: 10px 0;
+}
+hr {
+  background-color: #E6E6E6;
+  border: 0;
+  height: 1px;
+  clear: both;
+}
+ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+textarea.medium {
+  height: 150px;
+}
+
+/* --- UTILITY CLASSES --- */
+.flash, .notice, .alert {
+  border: 1px solid #8EA3A9;
+  font-weight: bold;
+  font-size: 16px;
+  color: $dark_grey;
+  @include background(image-url('flash_lightbulb.png') no-repeat 10px 12px, linear-gradient($white, #C2DCE8));
+  padding: 18px 40px;
+  margin-bottom: 20px;
+}
+.notice {
+  border: 1px solid #8EA3A9;
+  font-weight: bold;
+  font-size: 16px;
+  color: $dark_grey;
+  @include background(image-url('flash_lightbulb.png') no-repeat 10px 12px, linear-gradient($white, #C2DCE8));
+  padding: 18px 40px;
+}
+
+.tabbed_container .flash {
+  margin: 10px;
+}
+
+.actions {
+  @include grid(16);
+  padding: 20px 0 20px 0;
+}
+
+.scrollable_list {
+  @include grid(16);
+  @include alpha;
+  margin-top: 8px;
+  overflow-y: scroll !important;
+  height: 300px;
+  margin-bottom: 50px;
+  /*@include single-box-shadow($medium_grey, 0, 0, false, 5px, true);*/
+  border: $light_grey 1px solid;
+}
+
+div.message_form {
+  clear: left;
+  @include clearfix;
+}
+
+.basic_info {
+  font-size: 13px;
+  line-height: 18px;
+  margin: 20px;
+  ol li {
+    list-style: decimal;
+    list-style-position: inside;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+/* -------------- jQuery UI Changes -------------- */
+
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; border-bottom: 0 !important; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; text-decoration: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+
+/*
+ * jQuery UI Slider 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Slider#theming
+ */
+.ui-slider { position: relative; text-align: left; }
+.ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 1.2em; height: 1.2em; cursor: default; }
+.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0; }
+
+.ui-slider-horizontal { height: .8em; }
+.ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }
+.ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
+.ui-slider-horizontal .ui-slider-range-min { left: 0; }
+.ui-slider-horizontal .ui-slider-range-max { right: 0; }

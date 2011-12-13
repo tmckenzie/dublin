@@ -1,0 +1,23 @@
+.styled_checkbox_wrap {
+  position   : relative;
+  float      : left;
+  background : image-url("checkbox.png") no-repeat top left;
+  width      : 23px;
+  height     : 19px;
+  margin     : 3px;
+  cursor     : pointer;
+  padding    : 0 !important;
+  margin-top : -4px !important;
+}
+.styled_checkbox_wrap.disabled {
+  background-image : image-url("checkbox_disabled.png");
+}
+.styled_checkbox_wrap input {
+	opacity: 0;
+	cursor: pointer;
+	filter: alpha(opacity=0.0);
+	outline: 0;
+}
+.wrap_checked {
+  background-position : 0px -19px;
+}

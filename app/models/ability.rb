@@ -23,10 +23,16 @@ class Ability
     #
     #   can :update, Article, :published => true
     #
-    # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilitie
+    #
 
+    if user
+      can :manage, Product
+    end
 
-
+    if user && user.mmp_admin?
+      can :manage, User
+    end
 
   end
 end
