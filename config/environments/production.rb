@@ -1,5 +1,6 @@
 Dublin::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  Sass::Plugin.options[:never_update] = true
 
   # Code is not reloaded between requests
   config.cache_classes = true
@@ -14,7 +15,7 @@ Dublin::Application.configure do
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
-  # Don't fallback to assets pipeline if a precompiled asset is missed
+  # Don't fallback to assets pipeline if recompiled asset is missed
   config.assets.compile = false
 
   # Generate digests for assets URLs
