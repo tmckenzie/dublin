@@ -37,7 +37,9 @@ gem 'comma'
 gem "compass", "~> 0.12.alpha.0"
 gem "compass-960-plugin"
 gem "will_paginate"
+gem 'execjs'
 gem 'therubyracer'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
