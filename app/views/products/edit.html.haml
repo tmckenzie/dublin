@@ -1,5 +1,8 @@
-%h1 Editing product
-= render 'form'
+.tabbed_container
+  %ul
+    %li= link_to('Edit product', '#')
+  .panel
+    = render 'form'
 = link_to 'Show', @product
 |
 \#{link_to 'Back', products_path}

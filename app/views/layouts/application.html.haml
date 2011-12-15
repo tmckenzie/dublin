@@ -37,7 +37,7 @@
               %li= main_nav_link("Users", users_path, highlight_campaign_nav?(controller_name))
             - if can? :manage, Product
               %li= main_nav_link("Products", products_path, highlight_campaign_nav?(controller_name))
-            %li= main_nav_link("Suppliers", "#todo")
+            %li= main_nav_link("Suppliers", suppliers_path, highlight_campaign_nav?(controller_name))
         #main
           - if notice
             %p.notice= notice
