@@ -1,0 +1,18 @@
+.scrollable_list
+  %table.list
+    %thead
+      %tr
+        %th Supplier
+        %th Sku
+        %th
+        %th
+        %th
+      - @products.each do |product|
+        %tr
+          %td= product.supplier
+          %td= product.sku
+          %td= link_to 'Show', product
+          %td= link_to 'Edit', edit_product_path(product)
+          %td= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'New Product', new_product_path, :class => 'blue button'

@@ -33,9 +33,10 @@
         #main_nav
           %ul
             %li= main_nav_link("Home", root_path, current_page?(root_path))
+            - if can? :manage, User
+              %li= main_nav_link("Users", users_path, highlight_campaign_nav?(controller_name))
             - if can? :manage, Product
               %li= main_nav_link("Products", products_path, highlight_campaign_nav?(controller_name))
-            %li= main_nav_link("Billing", "#todo")
             %li= main_nav_link("Suppliers", "#todo")
         #main
           - if notice

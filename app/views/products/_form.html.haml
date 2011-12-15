@@ -1,0 +1,20 @@
+= form_for(@product) do |f|
+  - if @product.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@product.errors.count, "error")
+        prohibited this product from being saved:
+      %ul
+        - @product.errors.full_messages.each do |msg|
+          %li= msg
+          .field
+    = f.label :shortcode_string, 'Shortcode', :class => 'primary'
+    = f.text_field :shortcode_string
+  .field
+    = f.label :supplier, 'Supplier', :class => 'primary'
+    = f.text_field :supplier
+  .field
+    = f.label :sku, "Sku", :class => 'primary'
+    = f.text_field :sku
+  .actions
+    = f.submit 'Save', :class => 'blue button'

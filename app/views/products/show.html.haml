@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %b Supplier:
+  = @product.supplier
+%p
+  %b Sku:
+  = @product.sku
+= link_to 'Edit', edit_product_path(@product)
+|
+\#{link_to 'Back', products_path}

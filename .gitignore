@@ -4,7 +4,9 @@ log/*.log
 tmp/
 .sass-cache/
 .DS_Store
-.idea/*.*
+.idea/
+.idea/workspace.xml
+.idea/dublin.iml
 .jhw-cache/
 .sass-cache/
 .rspec-tm
@@ -13,5 +15,4 @@ coverage/
 log/*.log
 public/assets/
 spec/javascripts/generated/
-tmp/
 
