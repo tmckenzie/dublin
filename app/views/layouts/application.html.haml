@@ -30,14 +30,15 @@
                 =link_to("Help", "#")
                 |
                 =link_to("Log In", new_user_session_path)
-        #main_nav
-          %ul
-            %li= main_nav_link("Home", root_path, current_page?(root_path))
-            - if can? :manage, User
-              %li= main_nav_link("Users", users_path, highlight_campaign_nav?(controller_name))
-            - if can? :manage, Product
-              %li= main_nav_link("Products", products_path, highlight_campaign_nav?(controller_name))
-            %li= main_nav_link("Suppliers", suppliers_path, highlight_campaign_nav?(controller_name))
+        - if user_signed_in?
+          #main_nav
+            %ul
+              %li= main_nav_link("Home", root_path, current_page?(root_path))
+              - if can? :manage, User
+                %li= main_nav_link("Users", users_path, highlight_campaign_nav?(controller_name))
+              - if can? :manage, Product
+                %li= main_nav_link("Products", products_path, highlight_campaign_nav?(controller_name))
+              %li= main_nav_link("Suppliers", suppliers_path, highlight_campaign_nav?(controller_name))
         #main
           - if notice
             %p.notice= notice

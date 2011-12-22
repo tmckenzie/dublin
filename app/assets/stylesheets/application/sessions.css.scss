@@ -1,0 +1,51 @@
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/border-radius";
+#login {
+  background: #DFDFDF image-url("login-left.png") no-repeat left center;
+  border: #DFDFDF 1px solid;
+  @include border-radius(10px);
+  font-size: .9em;
+  font-size: 12px;
+}
+#login > div {
+  @include clearfix;
+}
+
+#login form {
+  float: right;
+  @include border-radius(10px);
+  background-color: #fff;
+  border-bottom: 2px solid #DEDEDE;
+  display: block;
+  padding: 40px 20px 20px;
+}
+
+#login form {
+  label {
+    width: 90px;
+    float: left;
+    font-weight: bold;
+    line-height: 1.7em;
+  }
+  label.secondary {
+    float: right;
+    margin-left: 4px;
+  }
+  input[type='text'] {
+    line-height: 1.5em;
+    width: 130px;
+  }
+  input[type='checkbox'] {
+    float: right;
+    margin-top: 4px;
+  }
+  input[type='submit'] {
+    margin-left: 90px;
+  }
+  p.links {
+    border-top: #DEDEDE 2px solid;
+    padding-top: 11px;
+    margin-top: 25px;
+  }
+}
+
