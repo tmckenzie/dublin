@@ -29,7 +29,7 @@ class ResearchController < ApplicationController
     @asin = params[:asin]
 
     @item = Nokogiri::XML(
-        open("data/#{@asin}.xml").read
+        open("tmp/#{@asin}.xml").read
     )
 
     @item.remove_namespaces!
@@ -75,7 +75,7 @@ class ResearchController < ApplicationController
     @res.items.each_with_index do |item|
       # retrieve string value using XML path
       #session[item.get('ASIN')] = item.to_s
-      f = File.new("data/#{item.get('ASIN')}.xml", File::CREAT|File::TRUNC|File::RDWR)
+      f = File.new("tmp/#{item.get('ASIN')}.xml", File::CREAT|File::TRUNC|File::RDWR)
       f.write(item.to_s)
       f.close
       item.get('ASIN')
