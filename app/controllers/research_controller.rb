@@ -42,11 +42,9 @@ class ResearchController < ApplicationController
   end
 
   def search(srchstr)
-    if !FileTest::directory?('data')
-      Dir::mkdir('data')
-    end
+    
 
-    FileUtils.rm_rf(Dir.glob("data/*"))
+    FileUtils.rm_rf(Dir.glob("tmp/*.xml"))
     #options provided on method call will merge with the default options
     @res = Amazon::Ecs.item_search('ruby', {:response_group => 'Medium', :sort => 'salesrank'})
 
