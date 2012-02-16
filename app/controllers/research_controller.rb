@@ -1,4 +1,4 @@
-require 'FileUtils'
+
 class ResearchController < ApplicationController
   def show
     Amazon::Ecs.configure do |options|
