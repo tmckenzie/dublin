@@ -1,0 +1,22 @@
+%p
+  %b Total:
+  = @total
+.scrollable_list
+  %table.list
+    %thead
+      %tr
+        %th Sku
+        %th Title
+        %th Rank
+        %th
+        %th
+      -  @res.items.each_with_index do |item|
+      -  @item = item
+        %tr
+          %td= item.get_element('ItemAttributes').get('SKU')
+          %td= item.get_element('ItemAttributes').get('Title')
+          %td= item.get('SalesRank')
+          %td
+            = link_to(item.get('ASIN'), new_research_path(:asin => item.get('ASIN')))
+            = link_to 'Edit', new_research_path(:asin => item.get('ASIN')), :class => "edit_icon", :title => "Click here to edit this campaign's detail"
+                                                                                                                                          

@@ -39,7 +39,7 @@ gem "compass-960-plugin"
 gem "will_paginate"
 gem 'execjs'
 gem 'therubyracer'
-
+gem 'amazon-ecs'
 # Use unicorn as the web server
 # gem 'unicorn'
 

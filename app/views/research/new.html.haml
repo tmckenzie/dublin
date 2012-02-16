@@ -1,0 +1,7 @@
+= link_to('Add Product', products_path(:product => {:sku => @title}), :method=>:post )
+%p Title
+= @title
+%p
+%p
+Remaining XML
+- xml_to_dl(@item)

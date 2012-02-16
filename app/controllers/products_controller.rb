@@ -38,11 +38,12 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-
+    @product.user_id = current_user.id
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }

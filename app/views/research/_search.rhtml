@@ -1,0 +1,15 @@
+<%= form_tag :controller => 'research', :action => 'search', :method => 'get' do %>
+  <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+  <%= submit_tag "Search", :name => nil %>
+  <%= link_to_function "Clear", "$('search_field').clear()" %>
+<% end %>
+
+= form_for @research do |f|
+  .field
+    = f.label :supplier, :class => 'primary'
+    = f.text_field :supplier
+  .field
+    = f.label :name, :class => 'primary'
+    = f.text_field :name
+  .actions
+    = f.submit 'Search', :class => 'blue button'

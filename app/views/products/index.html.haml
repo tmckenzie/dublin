@@ -4,6 +4,7 @@
       %tr
         %th Supplier
         %th Sku
+        %th User
         %th
         %th
         %th
@@ -11,6 +12,7 @@
         %tr
           %td= product.supplier
           %td= product.sku
+          %td= product.user_id
           %td= link_to 'Show', product
           %td= link_to 'Edit', edit_product_path(product)
           %td= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete

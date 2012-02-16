@@ -1,0 +1,6 @@
+%p#notice= notice
+
+= form_tag research_path, :method => 'get' do
+   %p
+   = text_field_tag :search, params[:search]
+   = submit_tag "Search", :name => nil

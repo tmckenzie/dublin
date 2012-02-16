@@ -39,6 +39,7 @@
               - if can? :manage, Product
                 %li= main_nav_link("Products", products_path, highlight_campaign_nav?(controller_name))
               %li= main_nav_link("Suppliers", suppliers_path, highlight_campaign_nav?(controller_name))
+              %li= main_nav_link("Research", research_path(1), highlight_campaign_nav?(controller_name))
         #main
           - if notice
             %p.notice= notice

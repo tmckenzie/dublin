@@ -16,15 +16,13 @@
       %tr
         %th Supplier
         %th Sku
-        %th Title
+        %th
         %th
         %th
       -  @res.items.each do |item|
         %tr
           %td= item.get('ASIN')
-          %td= item.get_element('ItemAttributes').get('SKU')
-          %td= item.get_element('ItemAttributes').get('Title')
-
+          %td= item.get_element('ItemAttributes').get('Model')
 
 .message_form{:data => {"content-key" => "supplier-form"}}
 
