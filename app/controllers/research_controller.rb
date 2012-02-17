@@ -20,7 +20,7 @@ class ResearchController < ApplicationController
   end
 
   def edit
-   
+
 
   end
 
@@ -34,7 +34,24 @@ class ResearchController < ApplicationController
 
     @item.remove_namespaces!
 
+    #@my_hash = Hash.from_xml(@item)
+
     @title ||= @item.xpath( "//Title[1]").first.to_s.sub!(/<Title>/, '').sub(/<\/Title>/, '')
+    @similar ||= @item.xpath( "//SimilarProducts")
+    @OfferSummary ||= @item.xpath( "//OfferSummary")
+    @Offers ||= @item.xpath( "//Offers")
+    @CustomerReviews ||= @item.xpath( "//CustomerReviews")
+    @ItemLinks ||= @item.xpath( "//ItemLinks")
+    @ImageSets ||= @item.xpath( "//ImageSets")
+    @EditorialReviews ||= @item.xpath( "//EditorialReviews")
+    @LargeImage ||= @item.xpath( "//LargeImage")
+    @MediumImage ||= @item.xpath( "//MediumImage")
+    @SmallImage ||= @item.xpath( "//SmallImage")
+    @SalesRank ||= @item.xpath( "//SalesRank")
+    @DetailPageURL ||= @item.xpath( "//DetailPageURL")
+    @ItemAttr ||= @item.xpath( "//ItemAttributes")
+
+    @ItemAttr
     #p 'title'
     #p @title
     #p @item
@@ -42,7 +59,7 @@ class ResearchController < ApplicationController
   end
 
   def search(srchstr)
-    
+
 
     FileUtils.rm_rf(Dir.glob("tmp/*.xml"))
     #options provided on method call will merge with the default options
