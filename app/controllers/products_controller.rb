@@ -3,7 +3,12 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+
+    if current_user.mmp_admin?
+      @products = Product.all
+    else
+      @products = Product.find_all_by_user_id(current_user.id)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
